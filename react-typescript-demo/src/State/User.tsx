@@ -10,7 +10,7 @@ export const User = () => {
 
     const [loggedIn, setloggedIn] = useState<null | AuthUser>(null)
     // OR by way of type assertion
-    // const [loggedIn, setloggedIn] = useState<null | AuthUser>({} as AuthUser)
+    // const [loggedIn, setloggedIn] = useState<AuthUser>({} as AuthUser)
 
     const handleLogin = () => {
         console.log('Im logged in')

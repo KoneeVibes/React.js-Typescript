@@ -30,7 +30,10 @@ export const H3W = styled.h3<TypographyProps>`
 // Otherwise you can specify the child props type in this other format, but the former is preferrable.
 export const H1 = (props: H1Props) => {
     return (
-        <H1W>{props.children}</H1W>
+        <div>
+            <H1W>{props.children}</H1W>
+            <H3W color='brown'>Losers Quit</H3W>
+        </div>
     )
 }
 

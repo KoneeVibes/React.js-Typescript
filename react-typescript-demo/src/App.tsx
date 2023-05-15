@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Greet } from './components/Greet';
 import { Person } from './components/Person';
@@ -10,6 +10,7 @@ import { Input } from './components/Input';
 import { Card, Container } from './components/Card';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { User } from './State/User';
+import { Counter } from './State/Counter';
 
 function App() {
 
@@ -45,6 +46,12 @@ function App() {
 
   const ages = [12, 13, 15]
 
+  const [toggleState, setToggleState] = useState(true)
+
+  const toggleButton = () => {
+    setToggleState(!toggleState)
+  }
+
 
   return (
     <div className="App">
@@ -69,9 +76,19 @@ function App() {
         <Input value='' onChange={() => console.log('A change')} />
         <Container age={4} />
       </Card>
-      <Card CardStyles={{background: 'pink', padding: '4em'}}>
-        <User/>
+      <Card CardStyles={{ background: 'pink', padding: '4em' }}>
+        <User />
       </Card>
+      <div style={{ display: "flex", justifyContent: "space-between" }} >
+        <button onClick={toggleButton}>Toggle Button</button>
+        <img src='./logo.svg' alt='sample logo'></img>
+      </div>
+
+      <div>
+        {toggleState && <h1>I am toggled to show</h1>}
+        <img src='./logo.svg' alt='sample logo'></img>
+      </div>
+      <Counter />
     </div>
   );
 }
