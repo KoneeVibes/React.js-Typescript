@@ -9,8 +9,11 @@ import { Button } from './components/Button';
 import { Input } from './components/Input';
 import { Card, Container } from './components/Card';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { User } from './State/User';
-import { Counter } from './State/Counter';
+import { User } from './components/State/User';
+import { Counter } from './components/State/Counter';
+import { ThemeContextProvider } from './components/Context/ThemeContext';
+import { Box } from './components/Context/Box';
+import { UserContextProvider } from './components/Context/UserContext';
 
 function App() {
 
@@ -68,7 +71,7 @@ function App() {
       <Greet name={'Umoren'} age={14} />
       <Person name={personName} info={Info} />
       <List names={listOfNames} age={ages} />
-      <Status status='Loading' />
+      <Status status='Success' />
       <Button handleClick={(e, id) => console.log('You clicked a', e, id)} />
       <Input value='' onChange={(event) => console.log(event)} />
       <Card CardStyles={{ display: 'flex', flexDirection: 'column' }}>
@@ -89,6 +92,12 @@ function App() {
         <img src='./logo.svg' alt='sample logo'></img>
       </div>
       <Counter />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
     </div>
   );
 }
