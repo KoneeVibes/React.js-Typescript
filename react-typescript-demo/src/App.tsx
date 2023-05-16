@@ -14,6 +14,9 @@ import { Counter } from './components/State/Counter';
 import { ThemeContextProvider } from './components/Context/ThemeContext';
 import { Box } from './components/Context/Box';
 import { UserContextProvider } from './components/Context/UserContext';
+import { DomRef } from './components/Ref/DomRef';
+import { MutableRef } from './components/Ref/MutableRef';
+import { ClassCounter } from './components/Class/Counter';
 
 function App() {
 
@@ -98,6 +101,9 @@ function App() {
       <UserContextProvider>
         <User />
       </UserContextProvider>
+      <DomRef/>
+      <MutableRef/>
+      <ClassCounter message='The count value is'/>
     </div>
   );
 }
