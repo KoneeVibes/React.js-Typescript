@@ -17,6 +17,10 @@ import { UserContextProvider } from './components/Context/UserContext';
 import { DomRef } from './components/Ref/DomRef';
 import { MutableRef } from './components/Ref/MutableRef';
 import { ClassCounter } from './components/Class/Counter';
+import { Private } from './components/Auth/Private';
+import { Profile } from './components/Auth/Profile';
+import { Lists } from './components/Generics/List';
+import { RandomNumber } from './components/Restriction/RandomNumber';
 
 function App() {
 
@@ -101,9 +105,12 @@ function App() {
       <UserContextProvider>
         <User />
       </UserContextProvider>
-      <DomRef/>
-      <MutableRef/>
-      <ClassCounter message='The count value is'/>
+      <DomRef />
+      <MutableRef />
+      <ClassCounter message='The count value is' />
+      <Private isLoggedIn={true} Component={Profile} />
+      <Lists items={[{ name: "okon", age: 16 }, { name: "effiong", age: 60 }, { name: "umoren", age: 100 }]} handleOnClick={(item) => console.log(item)} />
+      <RandomNumber value={10} isPositive/>
     </div>
   );
 }

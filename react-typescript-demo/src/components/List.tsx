@@ -1,13 +1,22 @@
 import React from 'react';
 
+type NameSyntax = {
+    first: string
+    last: string
+}
+
 type ListProps = {
 
     // type declaration for an array of objects
 
-    names?: {
-        first: string
-        last: string
-    }[]
+    // names?: {
+    //     first: string
+    //     last: string
+    // }[]
+
+    // or
+
+    names?: Array<NameSyntax>
 
     // type declaration for an array of numbers
 
