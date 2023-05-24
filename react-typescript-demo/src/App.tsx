@@ -21,6 +21,8 @@ import { Private } from './components/Auth/Private';
 import { Profile } from './components/Auth/Profile';
 import { Lists } from './components/Generics/List';
 import { RandomNumber } from './components/Restriction/RandomNumber';
+import { Toast } from './components/TemplateLiterals/Toast';
+import { AnotherButton } from './components/Html/Button';
 
 function App() {
 
@@ -62,6 +64,7 @@ function App() {
     setToggleState(!toggleState)
   }
 
+  const [test, setTest] = useState("")
 
   return (
     <div className="App">
@@ -75,7 +78,8 @@ function App() {
         <H3W>I will win</H3W>
       </H1>
       <H3W>Testing alot of stuff</H3W>
-      <Greet name={'Umoren'} age={14} />
+      {test}
+      <Greet name={'Umoren'} age={14} update={setTest} />
       <Person name={personName} info={Info} />
       <List names={listOfNames} age={ages} />
       <Status status='Success' />
@@ -110,7 +114,9 @@ function App() {
       <ClassCounter message='The count value is' />
       <Private isLoggedIn={true} Component={Profile} />
       <Lists items={[{ name: "okon", age: 16 }, { name: "effiong", age: 60 }, { name: "umoren", age: 100 }]} handleOnClick={(item) => console.log(item)} />
-      <RandomNumber value={10} isPositive/>
+      <RandomNumber value={10} isPositive />
+      <Toast position={"center"} />
+      <AnotherButton variant={"primary"} onClick={() => console.log("I will win")} >Another Button</AnotherButton>
     </div>
   );
 }

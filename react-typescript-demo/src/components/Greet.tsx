@@ -8,6 +8,7 @@ type GreetProps = {
 
 export const Greet = (props: GreetProps) => {
   
+  // I am trying to pass props from child to parent in the line below;
   props.update && props.update ('Your attempt is successful')
   
   return (
