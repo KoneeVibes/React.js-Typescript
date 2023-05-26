@@ -23,6 +23,7 @@ import { Lists } from './components/Generics/List';
 import { RandomNumber } from './components/Restriction/RandomNumber';
 import { Toast } from './components/TemplateLiterals/Toast';
 import { AnotherButton } from './components/Html/Button';
+import { Test } from './components/Polymorphic/Test';
 
 function App() {
 
@@ -117,6 +118,9 @@ function App() {
       <RandomNumber value={10} isPositive />
       <Toast position={"center"} />
       <AnotherButton variant={"primary"} onClick={() => console.log("I will win")} >Another Button</AnotherButton>
+      <Test as={"h1"} >I will win today</Test>
+      <Test as={"label"} htmlFor='Win' >I will win tomorrow</Test>
+      <Test as='p'>I will win always</Test>
     </div>
   );
 }
